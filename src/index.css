@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 16%;
+
+    /* Einstein Blue - Professional institutional color */
+    --primary: 210 100% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Einstein Coding Purple-Blue Gradient */
+    --secondary: 243 75% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 243 75% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 24%;
+
+    --radius: 0.75rem;
+
+    /* Course-specific accent colors from athletic logos */
+    --odonto: 0 100% 45%;
+    --adm: 328 100% 54%;
+    --medicina: 210 100% 50%;
+    --fisio: 258 90% 40%;
+    --nutricao: 45 100% 51%;
+    --enfermagem: 16 100% 50%;
+    --psicologia: 280 65% 60%;
+    --biomedica: 200 100% 40%;
+
+    /* Gradient definitions */
+    --gradient-einstein: linear-gradient(135deg, hsl(243 75% 59%), hsl(238 83% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(210 100% 24% / 0.1), 0 2px 4px -1px hsl(210 100% 24% / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(210 100% 24% / 0.1), 0 4px 6px -2px hsl(210 100% 24% / 0.05);
+    --shadow-glow: 0 0 20px hsl(243 75% 59% / 0.3);
+  }
+
+  .dark {
+    --background: 210 24% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 24% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 24% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 243 75% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 243 75% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 210 100% 50%;
+
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-hover: 0 10px 15px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 20px hsl(243 75% 59% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
