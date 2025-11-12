@@ -1,43 +1,5 @@
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+O projeto de calculadora do Einstein Coding se trata de um projeto de programação voltado para o desenvolvimento de um site que sirva como calculadora de notas para todos os alunos da FICSAE, isto é, como uma ferramenta para cálculo da média final em cada matéria, possibilitando planejamento prévio e consciência de notas. A ideia tem várias camadas, as quais serão implementadas à medida em que o projeto é desenvolvido. 
+A meta inicial é entregar o MVP - uma versão mesmo que simples mas funcional do projeto - até o começo do primeiro semestre de 2026. A princípio, este primeiro MVP não terá login/senha para cada usuário, mas irá salvar os dados do usuário localmente (sem conta, mas de modo que o site possa ser fechado e aberto novamente, salvando os inputs do usuário). Alunos de qualquer curso poderão utilizar, tendo abas específicas para cada curso. Idealmente, cada aba terá links para calculadora de cada sala (T1, T2, etc), e já redirecionará o usuário para uma página com todas as matérias que aquela turma está tendo atualmente, com os pesos atualizados. Mas mudanças podem ser feitas pelos professores ou até matérias extra (como optativas) podem ser realizadas, por isso, os usuários também têm poder de alterar (apenas na sua versão do site, claro) tanto os pesos, quanto as avaliações ou matérias (isto é, o aluno pode adicionar/remover avaliações caso queira, além de poder também alterar os pesos. Isso se aplica também à matérias). 
+Em versões mais futuras, o site terá login/senha para cada usuário, salvando os dados na nuvem. Médias de notas para avaliações (ou matérias) de turmas antigas estarão disponíveis para os alunos atuais. 
 
 
-*Edit a file directly in GitHub*
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-*Use GitHub Codespaces*
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
