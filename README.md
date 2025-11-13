@@ -125,3 +125,6 @@ git log --oneline --graph       # histórico resumido
 git restore <arquivo>           # desfaz alterações locais (antes do commit)
 git restore --staged <arquivo>  # tira do staged
 git revert <hash>               # cria commit que reverte outro (histórico preservado)
+
+## 8) Link do Drive para colocar os planos de ensino
+https://drive.google.com/drive/folders/1Ii-9y0VJJFHFQlAh77tBeVR0xBoO780J?usp=drive_link
