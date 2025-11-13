@@ -1,10 +1,42 @@
-O projeto de calculadora do Einstein Coding se trata de um projeto de programação voltado para o desenvolvimento de um site que sirva como calculadora de notas para todos os alunos da FICSAE, isto é, como uma ferramenta para cálculo da média final em cada matéria, possibilitando planejamento prévio e consciência de notas. A ideia tem várias camadas, as quais serão implementadas à medida em que o projeto é desenvolvido. 
-A meta inicial é entregar o MVP - uma versão mesmo que simples mas funcional do projeto - até o começo do primeiro semestre de 2026. A princípio, este primeiro MVP não terá login/senha para cada usuário, mas irá salvar os dados do usuário localmente (sem conta, mas de modo que o site possa ser fechado e aberto novamente, salvando os inputs do usuário). Alunos de qualquer curso poderão utilizar, tendo abas específicas para cada curso. Idealmente, cada aba terá links para calculadora de cada sala (T1, T2, etc), e já redirecionará o usuário para uma página com todas as matérias que aquela turma está tendo atualmente, com os pesos atualizados. Mas mudanças podem ser feitas pelos professores ou até matérias extra (como optativas) podem ser realizadas, por isso, os usuários também têm poder de alterar (apenas na sua versão do site, claro) tanto os pesos, quanto as avaliações ou matérias (isto é, o aluno pode adicionar/remover avaliações caso queira, além de poder também alterar os pesos. Isso se aplica também à matérias). 
-Em versões mais futuras, o site terá login/senha para cada usuário, salvando os dados na nuvem. Médias de notas para avaliações (ou matérias) de turmas antigas estarão disponíveis para os alunos atuais. 
+# Calculadora de Notas — Einstein Coding (FICSAE)
 
-# Guia Rápido — Git + Django + Fluxo de Trabalho
+## Descrição
+A **Calculadora de Notas** é um site voltado a todos os alunos da **FICSAE** para estimar a **média final por matéria** e planejar o desempenho ao longo do semestre.  
+No **MVP** (entrega prevista para o **início do 1º semestre de 2026**), não haverá login/senha: os dados do aluno serão **salvos localmente no navegador**, permitindo fechar/abrir o site sem perder os inputs. O site terá **abas por curso** e, idealmente, **links por turma** (T1, T2, etc.) que já levem a uma página com as matérias e **pesos atualizados**.  
+Como professores podem alterar regras (ou alunos cursarem optativas), **o usuário poderá ajustar localmente** pesos, avaliações e até matérias (adicionar/remover avaliações, alterar pesos e disciplinas) — sempre **apenas na sua versão** do site.
 
-> Use este passo a passo para instalar **Git** e **Django**, clonar a **main**, criar branches, editar, fazer **commit + push** e abrir **Pull Request**.
+**Visão futura:** com **login/senha** e dados salvos na nuvem; **médias históricas** de avaliações/matérias de turmas anteriores para consulta pelos alunos atuais.
+
+---
+
+## Funcionalidades Principais (MVP)
+- **Calculadora por Curso/Turma** — Seleção de curso e turma; listagem de matérias do período.
+- **Regras de Avaliação** — Exibição de itens avaliativos com **pesos** e **máximos**.
+- **Cálculo de Média Ponderada** — Resultado em tempo real (sem recarregar a página).
+- **“Quanto Falta”** — Estimativa da nota necessária para atingir a média-alvo.
+- **Salvamento Local** — Inputs persistem no **navegador (localStorage)**, sem conta.
+- **Edição Local de Regras** — Usuário pode ajustar pesos/itens/matérias **só para si**.
+- **Django Admin (equipe)** — Cadastro/atualização de cursos, disciplinas, pesos e itens.
+- **Acessibilidade Básica** — Validação de faixas de nota, mensagens claras e layout responsivo.
+
+### Funcionalidades Futuras
+- **Autenticação** — Conta por usuário; dados sincronizados na nuvem.
+- **Estatísticas Históricas** — Médias de turmas anteriores por avaliação/matéria.
+- **Perfis e Cenários** — Salvar múltiplos cenários, comparar simulações, compartilhar links.
+- **Relatórios** — Exportação/compartilhamento de resultados.
+
+---
+
+## Tecnologias Utilizadas
+| Camada          | Tecnologias                                                                 |
+|-----------------|------------------------------------------------------------------------------|
+| Backend         | **Django 5** (Admin, ORM, Templates), Python 3.12+                          |
+| Interatividade  | **HTMX** (atualizações parciais sem SPA)                                    |
+| UI/Estilos      | **Tailwind CSS** (CDN no MVP)                                               |
+| Banco de Dados  | **SQLite** (dev) / **PostgreSQL** (produção)                                |
+| Deploy          | Render ou Railway                                                            |
+| Observabilidade | Sentry (erros), Umami/Simple Analytics (analytics leve, sem cookies)        |
+| Gestão          | Git + **GitHub Projects** (Kanban, Issues, PRs)                             |
 
 ---
 # Guia Rápido — Git + Django + Fluxo de Trabalho
@@ -48,7 +80,7 @@ Se o projeto Django ainda não existir (opcional):
 ## 4) Rodar localmente (Django)
 python manage.py migrate
 python manage.py runserver
-# Acesse: http://127.0.0.1:8000/
+Acesse: http://127.0.0.1:8000/
 
 ## 5) Fluxo de trabalho — branch → commit → push → PR
 
@@ -79,8 +111,8 @@ Preencha título/descrição e, se houver, relacione a issue: Fixes #123
 ## 6) Atualizar sua branch se a main mudou
 git fetch origin
 git rebase origin/main
-# se houver conflitos:
-# 1) edite os arquivos marcados
+se houver conflitos:
+1) edite os arquivos marcados
 git add <arquivos corrigidos>
 git rebase --continue
 git push --force-with-lease
